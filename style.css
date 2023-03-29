@@ -1,54 +1,152 @@
-.container img:nth-child(1) {
-width: 100px;
-height: 100px;
-border-radius: 50px;
-position:sticky;
-bottom: 10px;
-right: 10px;
+*{
+    box-sizing : border-box;
 }
 
-
-.container p {
- padding:1em;
- font-weight:bolder;
- font-family: Arial, Helvetica, sans-serif;
-}
 body{
-    width: 100%;
-    height: 100vh;
-    background: url(https://images.unsplash.com/photo-1589025942091-860486da079f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aGlnaCUyMHF1YWxpdHklMjB3YWxscGFwZXJ8ZW58MHx8MHx8&w=1000&q=80 );
-}
-.container {
-    width: 100px;
-    height: 100px;
-    border: 2px solid blue;
-    position: relative;
-    box-shadow: 5px 5px 5px blue;
+    padding: 0;
+    margin:0;
+    background-color: aliceblue;
+
 }
 
-.container h1 {
-    font-family: 'Fasthand', cursive;
+
+
+/* -------------------- */
+/*     BASIC RESET      */
+/* -------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+:root {
+    /* COLORS */
+    --clr-dark: 230 35% 7%;
+    --clr-accent: 231 77% 90%;
+    --clr-white: 0 0% 100%;
+    --gap: 3rem;
   
-    text-shadow: 10px 10px 10px brown;
+    /* FONT SIZES */
+    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+    --fs-800: 3.5rem;
+    --fs-700: 1.5rem;
+    --fs-600: 1rem;
+    --fs-500: 1rem;
+    --fs-400: 0.9375rem;
+    --fs-300: 1rem;
+    --fs-200: 0.875rem;
+  
+    /* FONT-FAMILIES */
+    --ff-serif: "Bellefair", serif;
+    --ff-sans-cond: "Barlow Condensed", sans-serif;
+    --ff-sans-normal: "Barlow", sans-serif;
+  }
+  
+  /* Global Reset */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+  
+  /* Margin Reset */
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  picture {
+    margin: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-weight: 400;
+  }
+  
+  body {
+    font-family: var(--ff-sans-normal);
+    font-size: var(--fs-400);
+    background-color: hsl(var(--clr-dark));
+    color: hsl(var(--clr-accent));
+    min-height: 100vh;
+    line-height: 1.6;
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    overflow-x: hidden;
+  }
+  
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+  input,
+  button,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+  
+
+  .flex{
+    display :flex  ;
+  }
+
+
+  nav {
+    margin-top: 2rem;
+  }
+
+ 
+  nav.flex{
+    justify-content: space-between;
+  }
+
+  .navigation.flex{
+    justify-content: space-evenly;
+    gap: 3rem;
+    padding-left: 2rem;
+
+  }
+
+  .navigation {
+
+    list-style: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 2px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 1rem 1rem 1rem 0rem;
+  }
+  
+.navigation.flex > ul > li >span {
+    justify-content: space-between;
+}
+
+.container{
+    justify-content:center;
+    align-items: center;
+    padding: 5rem;
+}
+
+.text{
+    width:50%;
+}
+
+.img1 > img {
+    object-fit: cover;
+    transform: scale(1);
+    justify-self: center;
+
 
 }
-.i1{
-    width: 100%;
-    height: 80px;
-    object-fit: cover ;
-    border-radius: 50%;
-    animation: scaleAnimation;
-    animation-duration: 2000ms;
-    animation-iteration-count: infinite;}
 
-@keyframes scaleAnimation{
-    0%{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(3);
-    }
-    100%{
-        transform: scale(5);
-    }
-}
+
